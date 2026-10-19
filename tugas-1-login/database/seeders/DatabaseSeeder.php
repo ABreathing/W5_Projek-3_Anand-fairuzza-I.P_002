@@ -9,22 +9,32 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'username' => 'budi',
-            'password' => 'rahasia123',
-            'nama_lengkap' => 'Budi Santoso',
-        ]);
+        $budi = new User();
+        $budi->username = 'budi';
+        $budi->password = 'rahasia123';
+        $budi->nama_lengkap = 'Budi Santoso';
+        $budi->role = 'customer';
+        $budi->save();
 
-        User::create([
-            'username' => 'siti',
-            'password' => 'rahasia456',
-            'nama_lengkap' => 'Siti Aisyah',
-        ]);
+        $siti = new User();
+        $siti->username = 'siti';
+        $siti->password = 'rahasia456';
+        $siti->nama_lengkap = 'Siti Aisyah';
+        $siti->role = 'staff';
+        $siti->save();
 
-        User::create([
-            'username' => 'Anand',
-            'password' => '123',
-            'nama_lengkap' => 'Anand Fairuzza I.P',
-        ]);
+        $anand = new User();
+        $anand->username = 'Anand';
+        $anand->password = '123';
+        $anand->nama_lengkap = 'Anand Fairuzza I.P';
+        $anand->role = 'admin';
+        $anand->save();
+
+        $dewi = new User();
+        $dewi->username = 'dewi';
+        $dewi->password = 'rahasia789';
+        $dewi->nama_lengkap = 'Dewi Lestari';
+        $dewi->role = 'customer';
+        $dewi->save();
     }
 }
